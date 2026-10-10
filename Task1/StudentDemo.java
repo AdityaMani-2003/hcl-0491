@@ -1,5 +1,5 @@
 
-package Collections;
+package Task1;
 
 import java.util.Collections;
 import java.util.Comparator;
