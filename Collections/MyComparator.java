@@ -1,3 +1,6 @@
+
+package Collections;
+
 import java.util.*;
 
 class Student implements Comparable<Student> {
@@ -18,15 +21,17 @@ class Student implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return "Roll No: " + rollNo +
-                ", Name: " + name +
-                ", Age: " + age;
+        return "Roll No: " + rollNo
+                + ", Name: " + name
+                + ", Age: " + age;
     }
 }
 
 public class MyComparator {
     public static void main(String[] args) {
-        ArrayList<Student> list = new ArrayList<>();
+
+        java.util.ArrayList<Student> list =
+                new java.util.ArrayList<>();
 
         list.add(new Student(103, "Rahul", 22));
         list.add(new Student(101, "Aman", 20));
@@ -38,15 +43,18 @@ public class MyComparator {
         list.forEach(System.out::println);
 
         System.out.println("\nComparator - Roll No Descending:");
-        list.sort((a, b) -> Integer.compare(b.rollNo, a.rollNo));
+        list.sort((a, b) ->
+                Integer.compare(b.rollNo, a.rollNo));
         list.forEach(System.out::println);
 
         System.out.println("\nComparator - Age Ascending:");
-        list.sort((a, b) -> Integer.compare(a.age, b.age));
+        list.sort((a, b) ->
+                Integer.compare(a.age, b.age));
         list.forEach(System.out::println);
 
         System.out.println("\nComparator - Age Descending:");
-        list.sort((a, b) -> Integer.compare(b.age, a.age));
+        list.sort((a, b) ->
+                Integer.compare(b.age, a.age));
         list.forEach(System.out::println);
     }
 }
