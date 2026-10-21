@@ -11,8 +11,8 @@ public class FirstprojectApplication {
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		Employee emp1 = context.getBean(Employee.class);
-		Employee emp2 = context.getBean(Employee.class);
+		Employer emp1 = context.getBean(Employer.class);
+		Employer emp2 = context.getBean(Employer.class);
 
 		emp1.display();
 

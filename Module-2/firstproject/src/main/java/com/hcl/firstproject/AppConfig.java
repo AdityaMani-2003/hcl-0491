@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public Employee employee() {
-        return new Employee();
+    public Employer employee() {
+        return new Employer();
     }
 }
