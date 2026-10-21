@@ -1,9 +1,15 @@
 package com.hcl.firstproject.notificationService;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype") //By default, Spring creates singleton beans,
+// meaning both student and student1 refer to the same object. That's why their hash codes are identical.
+//to get different hashcode, we set scope("prototype")
 public class Student {
     private NotificationService notificationService;
 
@@ -15,4 +21,15 @@ public class Student {
     public void notifyStudent() {
         notificationService.sendMsg("Your assessment is submitted");
     }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Object created");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Object destroyed");
+    }
+
 }
