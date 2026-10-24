@@ -17,22 +17,43 @@ public class EmpRepoImp implements EmployeeRepo {
     }
 
     @Override
+    public String addEmpBulk(List<Employee> bulkEmp) {
+        emplist.addAll(bulkEmp);
+        return "Employee added successfully";
+    }
+
+    @Override
     public List<Employee> getEmp() {
         return emplist;
     }
 
     @Override
     public Employee getEmpById(long empid) {
-        return null;
+        return emplist.stream().filter(e -> e.getEmp_id() == empid).findFirst().orElse(null);
     }
 
     @Override
     public String deleteById(long empid) {
-        return "";
+        boolean status = false;
+        if (getEmpById(empid) != null) {
+            status = emplist.removeIf(e -> e.getEmp_id() == empid);
+        }
+        if (status) {
+            return "Employee deleted successfully";
+        }
+
+        return "Employee id is not registered with id " + empid;
     }
 
     @Override
     public String updateById(long empid, Employee updatedEmp) {
-        return "";
+        Employee emp = getEmpById(empid);
+
+        if (emp != null) {
+            emp.setEmail(updatedEmp.getEmail());
+            return "Employee updated successfully";
+        }
+
+        return "Employee ID is not registered: " + empid;
     }
 }
