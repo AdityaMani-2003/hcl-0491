@@ -7,7 +7,7 @@
     "dev": "vite",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:converage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
