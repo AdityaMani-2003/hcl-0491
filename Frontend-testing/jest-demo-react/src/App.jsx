@@ -1,5 +1,8 @@
-const App =() =>{
-  return <h1>jesting in react</h1>
+import StudentForm from "./components/StudentForm";
+
+const App = () => {
+  return <StudentForm />;
+  // return <h1>Jesting in React</h1>;
 };
 
 export default App;
