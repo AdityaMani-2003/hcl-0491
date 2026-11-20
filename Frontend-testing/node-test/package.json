@@ -1,0 +1,12 @@
+{
+  "name": "frontend-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "module"
+}
